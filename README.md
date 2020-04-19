@@ -13,6 +13,7 @@ Equipment
 * NTSC-M digital video decoder - whatever the cheapest you can find on eBay, e.g.
     * TW9900
     * AK8859VN
+    * GM7150BC
 * ESP32 module **with >=1MB pSRAM** - ESP32's SRAM is not big enough to store even a single frame
 * Various power supplies and/or voltage regulators required to power the decoder/ESP32
 * Additional components as required by the decoder/ESP32
@@ -33,7 +34,7 @@ Interface Pinout
 |      SCLK | <---- | I2C_SCL       |
 |      SDAT | <---> | I2C_SDA       |
 |           |       |               |
-|      DCLK | ----> | I2S0_CLK      |
+|      DCLK | ----> | I2S0I_WS_in   |
 | SYNC (EN) | ----> | I2S0_H_ENABLE |
 |     HSYNC | ----> | I2S0_H_SYNC   |
 |     VSYNC | ----> | I2S0_V_SYNC   |
@@ -47,6 +48,7 @@ Order of Operations
 2. Set up Wi-Fi
 3. Set up I²S transfer
     * This includes allocating enough DMA RAM for one line of data
+    * Invert HSYNC/VSYNC/enable signals in software if necessary
 4. Allocate enough RAM on pSRAM for one complete frame
 5. Set up decoder
 6. Wait until client has connected

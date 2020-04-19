@@ -1,0 +1,20 @@
+.wifi_ssid = "xxx",
+.wifi_pass = "xxx",
+
+.scl_pin = 0,
+.sda_pin = 0,
+
+.dclk_pin = 0,
+.enable_pin = 0,
+.hsync_pin = 0,
+.vsync_pin = 0,
+.d7_pin = 0,
+.d6_pin = 0,
+.d5_pin = 0,
+.d4_pin = 0,
+.d3_pin = 0,
+.d2_pin = 0,
+.d1_pin = 0,
+.d0_pin = 0
+
+#define DECODER_MODEL XXXXXX
